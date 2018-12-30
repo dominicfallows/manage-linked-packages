@@ -1,0 +1,46 @@
+{
+  "name": "manage-linked-packages",
+  "version": "1.0.0",
+  "description": "List and reset NPM and Yarn linked packages",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominicfallows/manage-linked-packages.git"
+  },
+  "author": "Dominic Fallows <consultant@dominicfallows.uk>",
+  "license": "MIT",
+  "keywords": [
+    "npm",
+    "yarn",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/dominicfallows/manage-linked-packages/issues"
+  },
+  "homepage": "https://github.com/dominicfallows/manage-linked-packages",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jestconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly" : "yarn test && yarn lint",
+    "preversion" : "yarn lint",
+    "version" : "yarn format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
