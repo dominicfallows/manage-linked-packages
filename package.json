@@ -1,6 +1,6 @@
 {
   "name": "manage-linked-packages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "List and reset NPM and Yarn linked packages",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -30,7 +30,7 @@
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
-    "version": "yarn format && git add -A src",
+    "version": "yarn format && git add -A",
     "postversion": "git push && git push --tags"
   },
   "files": [

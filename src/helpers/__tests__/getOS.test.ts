@@ -14,7 +14,6 @@ describe("test platform detection", () => {
       });
       const os = getOS();
       expect(os).toBe("darwin");
-
     } catch (err) {
       console.log(err);
     }
@@ -27,7 +26,6 @@ describe("test platform detection", () => {
       });
       const os = getOS();
       expect(os).toBe("linux");
-
     } catch (err) {
       console.log(err);
     }
@@ -40,7 +38,6 @@ describe("test platform detection", () => {
       });
       const os = getOS();
       expect(os).toBe("win32");
-
     } catch (err) {
       console.log(err);
     }
