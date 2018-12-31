@@ -1,10 +1,17 @@
 # Manage Linked Packages
 
-List and reset NPM and Yarn global linked packages.
+List and reset NPM and Yarn global linked packages, manually or programmatically in Yarn/NPM scripts.
 
 There is no out-of-the-box way to locate or reset packages that have been linked with [NPM `link`](https://docs.npmjs.com/cli/link.html) or [Yarn `link`](https://yarnpkg.com/lang/en/docs/cli/link/).
 
-For example:
+## Contents
+
+- [Use-case example](#use-case-example)
+- [Install](#install)
+- [Usage](#usage)
+- [Uninstall](#uninstall)
+
+## Use-case example
 
 - Image you are developing a local package (PackageA) and you want another local package you are developing (PackageB) to use it, without having to publish packages in development to NPM/GitHub, then you use `yarn link` or `npm link` to create a global linked package
 - `yarn link` and `npm link` won't let you create/override a global linked package, say, if you needed to change folders where PackageA is located, or have a duplicate folder (for valid reasons). You have to `yarn unlink` or `npm unlink` PackageA first manually
