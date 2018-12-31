@@ -36,7 +36,7 @@ export const Main = ({ packageManager, action, packageName }: IMainProps): void 
 
   if (typeof path !== "string") {
     console.log(notFoundText(`${packageName} in global ${packageManager} linked packages`));
-    process.exit(1);
+    process.exit(0);
   }
 
   if (typeof path === "string" && action === "locate") {
