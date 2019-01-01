@@ -1,6 +1,6 @@
 {
   "name": "manage-linked-packages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "List and reset NPM and Yarn linked packages",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
