@@ -45,8 +45,8 @@ export default (packageManager: "yarn" | "npm", packageName: string): string | n
     case "win32":
       let winPath =
         linkFolderPath !== null
-          ? `${linkFolderPath}\\${packageName}`
-          : `${homeDir}\\AppData\\Local\\Yarn\\config\\link`;
+          ? `${linkFolderPath}`
+          : `${homeDir}\\AppData\\Local\\Yarn\\Data\\link`;
       packageNameParts.forEach((part: string) => {
         winPath = `${winPath}\\${part}`;
       });
