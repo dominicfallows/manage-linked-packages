@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import fs from "fs";
 import { homedir } from "os";
 
@@ -12,17 +13,40 @@ export default (packageManager: "yarn" | "npm", packageName: string): string | n
     return require("global-modules-path").getPath(packageName);
   }
 
+  let linkFolderPath: string | null = null;
+
+  try {
+    const yarnConfigCurrentBuffer = execSync("yarn config current");
+
+    let yarnConfigCurrentStr: string = yarnConfigCurrentBuffer.toString();
+    yarnConfigCurrentStr = yarnConfigCurrentStr.substring(
+      yarnConfigCurrentStr.indexOf("{"),
+      yarnConfigCurrentStr.lastIndexOf("}") + 1
+    );
+
+    const yarnConfigCurrent = JSON.parse(yarnConfigCurrentStr);
+    if (typeof yarnConfigCurrent.linkFolder === "string") {
+      linkFolderPath = yarnConfigCurrent.linkFolder;
+    }
+  } catch (err) {
+    // do nothing
+  }
+
   switch (os) {
     case "darwin":
     case "linux":
-      const unixPath = `${homeDir}/.config/yarn/link/${packageName}`;
+      const unixPath =
+        linkFolderPath !== null ? `${linkFolderPath}/${packageName}` : `${homeDir}/.config/yarn/link/${packageName}`;
       if (fs.existsSync(unixPath)) {
         return unixPath;
       }
       return null;
 
     case "win32":
-      let winPath = `${homeDir}\\AppData\\Local\\Yarn\\config\\link`;
+      let winPath =
+        linkFolderPath !== null
+          ? `${linkFolderPath}\\${packageName}`
+          : `${homeDir}\\AppData\\Local\\Yarn\\config\\link`;
       packageNameParts.forEach((part: string) => {
         winPath = `${winPath}\\${part}`;
       });
