@@ -13,7 +13,9 @@
   "keywords": [
     "npm",
     "yarn",
-    "javascript"
+    "javascript",
+    "global",
+    "link"
   ],
   "bugs": {
     "url": "https://github.com/dominicfallows/manage-linked-packages/issues"
