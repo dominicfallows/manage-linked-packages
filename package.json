@@ -37,7 +37,8 @@
   },
   "files": [
     "lib/**/*",
-    "bin/**/*"
+    "bin/**/*",
+    "index.js"
   ],
   "bin": {
     "manage-linked-packages": "./bin/manage-linked-packages.js"
