@@ -72,7 +72,7 @@ program
     /^(locate|reset)$/i
   )
   .option("-n --package-name <package-name>", "required: name of global linked yarn/npm package to manage")
-  .action(props => {
+  .action((props) => {
     Main({
       action: props.manageAction,
       packageManager: props.packageManager,
