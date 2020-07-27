@@ -24,7 +24,7 @@ jobs:
       - name: Dump release tag name
         env:
           GITHUB_RELEASE_TAG: ${{ github.event.release.tag_name }}
-        run: echo "Release tag: $GITHUB_RELEASE_TAG"
+        run: echo "Release tag:"" $GITHUB_RELEASE_TAG"
 #  build:
 #    runs-on: ubuntu-latest
 #    steps:
