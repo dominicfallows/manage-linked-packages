@@ -23,7 +23,9 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: Dump release tag name
-        run: echo "${{ github.event.release.tag_name }}"
+        env:
+          GITHUB_RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: echo "GITHUB_RELEASE_TAG"
 #  build:
 #    runs-on: ubuntu-latest
 #    steps:
