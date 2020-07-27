@@ -6,7 +6,6 @@ name: Public packages to npm and GitHub Packages
 on:
   pull_request:
     branches: [master]
-    types: [opened]
 
   release:
     types: [created]
