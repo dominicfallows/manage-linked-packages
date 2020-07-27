@@ -1,7 +1,7 @@
 {
   "name": "manage-linked-packages",
   "version": "1.0.7",
-  "description": "List and reset NPM and Yarn linked packages",
+  "description": "List and reset npm and Yarn linked packages",
   "main": "index.js",
   "types": "lib/index.d.ts",
   "repository": {
@@ -46,18 +46,18 @@
   "preferGlobal": true,
   "dependencies": {
     "colors": "^1.4.0",
-    "commander": "^5.1.0",
+    "commander": "^6.0.0",
     "global-modules-path": "^2.3.1"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.4",
-    "jest": "^25.5.0",
+    "@types/jest": "^26.0.7",
+    "@types/node": "^14.0.26",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "ts-jest": "^25.4.0",
+    "ts-jest": "^26.1.3",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   }
 }
