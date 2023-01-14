@@ -47,7 +47,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^6.2.0",
-    "global-modules-path": "^2.3.1"
+    "global-modules-path": "^3.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
